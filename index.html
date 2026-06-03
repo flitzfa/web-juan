@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página personal de Juan Enriquez: profesor de educación musical, compositor y showman." />
+  <title>Juan Enriquez | Profesor de Educación Musical, Compositor y Showman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          colors: {
+            ink: '#111214',
+            night: '#171718',
+            wine: '#7d2733',
+            brass: '#c89b55',
+            paper: '#f6f0e7',
+            sage: '#7d8a6f'
+          },
+          boxShadow: {
+            album: '0 28px 70px rgba(17, 18, 20, 0.24)',
+            glow: '0 20px 60px rgba(200, 155, 85, 0.22)'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-sans text-ink antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/40 bg-night/85 px-5 py-3 text-white shadow-2xl shadow-black/20 backdrop-blur-xl">
+      <a href="#inicio" class="font-display text-2xl font-bold tracking-wide text-paper">Juan Enriquez</a>
+
+      <input id="menu-toggle" type="checkbox" class="peer hidden" aria-label="Abrir menú" />
+      <label for="menu-toggle" data-menu-button aria-controls="main-menu" aria-expanded="false" class="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-white/15 text-lg text-paper transition hover:border-brass hover:text-brass lg:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <div id="main-menu" class="absolute left-4 right-4 top-20 hidden rounded-3xl border border-white/10 bg-night/95 p-5 shadow-2xl peer-checked:block lg:static lg:block lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
+        <ul class="flex flex-col gap-4 text-sm font-semibold text-paper/90 lg:flex-row lg:items-center lg:gap-7">
+          <li><a data-menu-link class="nav-link transition hover:text-brass" href="#inicio">Inicio</a></li>
+          <li><a data-menu-link class="nav-link transition hover:text-brass" href="#sobre-mi">Sobre Mí</a></li>
+          <li><a data-menu-link class="nav-link transition hover:text-brass" href="#albumes">Álbumes Destacados</a></li>
+          <li><a data-menu-link class="nav-link transition hover:text-brass" href="#discografia">Discografía</a></li>
+          <li><a data-menu-link class="nav-link transition hover:text-brass" href="#shows">Show & Proyectos</a></li>
+          <li><a data-menu-link class="nav-link transition hover:text-brass" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="relative isolate min-h-screen overflow-hidden bg-night pt-32 text-paper">
+      <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_25%_20%,rgba(200,155,85,.34),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(125,39,51,.45),transparent_30%),linear-gradient(135deg,#111214_0%,#25211f_50%,#111214_100%)]"></div>
+      <div class="absolute inset-x-0 bottom-0 -z-10 h-44 bg-gradient-to-t from-paper to-transparent"></div>
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-24 pt-12 lg:grid-cols-[1.08fr_.92fr] lg:px-8 lg:pb-32">
+        <div>
+          <p class="mb-5 inline-flex items-center gap-3 rounded-full border border-brass/30 bg-white/5 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-brass">
+            <i class="fa-solid fa-music"></i>
+            Música con historia
+          </p>
+          <h1 class="font-display text-6xl font-bold leading-none text-white sm:text-7xl lg:text-8xl">Juan Enriquez</h1>
+          <p class="mt-6 max-w-3xl text-xl font-semibold text-paper/90 sm:text-2xl">Profesor de Educación Musical | Compositor | Showman</p>
+          <p class="mt-8 max-w-2xl border-l-4 border-brass pl-5 font-display text-3xl font-semibold leading-tight text-paper sm:text-4xl">
+            “La guitarra, la voz y la composición como herramientas para plasmar la vida en canciones.”
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#albumes" class="inline-flex items-center justify-center gap-3 rounded-full bg-brass px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-night shadow-glow transition hover:-translate-y-1 hover:bg-paper">
+              <i class="fa-solid fa-compact-disc"></i>
+              Explorar obra
+            </a>
+            <a href="#contacto" class="inline-flex items-center justify-center gap-3 rounded-full border border-paper/25 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-paper transition hover:-translate-y-1 hover:border-brass hover:text-brass">
+              <i class="fa-solid fa-paper-plane"></i>
+              Contacto
+            </a>
+          </div>
+        </div>
+
+        <div class="relative mx-auto aspect-[4/5] w-full max-w-md">
+          <div class="absolute inset-0 rotate-3 rounded-[2rem] bg-brass/25"></div>
+          <div class="relative flex h-full flex-col justify-between overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-8 shadow-album backdrop-blur">
+            <div class="flex items-center justify-between text-paper/70">
+              <i class="fa-solid fa-record-vinyl text-5xl text-brass"></i>
+              <span class="text-sm font-bold uppercase tracking-[0.24em]">Autor</span>
+            </div>
+            <div>
+              <div class="mb-6 h-40 rounded-full border border-brass/40 bg-[radial-gradient(circle,rgba(200,155,85,.45),transparent_14%,rgba(255,255,255,.08)_15%,rgba(255,255,255,.08)_16%,transparent_17%)]"></div>
+              <p class="font-display text-4xl font-bold text-white">Canciones con raíz, humor y memoria.</p>
+              <p class="mt-4 text-sm leading-6 text-paper/75">Rock, pop, reggae, música popular y electrónica al servicio de una obra clara, cálida y personal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="bg-paper py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+        <div class="relative">
+          <div class="sticky top-28 overflow-hidden rounded-[2rem] bg-night p-4 shadow-album">
+            <div class="grid aspect-[4/5] place-items-center rounded-[1.5rem] border border-brass/30 bg-[linear-gradient(145deg,rgba(125,138,111,.45),rgba(17,18,20,.95)),radial-gradient(circle_at_50%_35%,rgba(200,155,85,.45),transparent_30%)] text-center text-paper">
+              <div class="px-8">
+                <i class="fa-solid fa-guitar mb-8 text-7xl text-brass"></i>
+                <p class="font-display text-4xl font-bold">Perfil artístico</p>
+                <p class="mt-3 text-sm uppercase tracking-[0.22em] text-paper/70">Profesor · compositor · showman</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="mb-3 text-sm font-extrabold uppercase tracking-[0.24em] text-wine">Sobre mí</p>
+          <h2 class="font-display text-5xl font-bold leading-tight text-night sm:text-6xl">Una vida musical entre aulas, escenarios y canciones.</h2>
+          <div class="mt-8 space-y-5 text-lg leading-8 text-ink/75">
+            <p>Egresado de la Escuela de Arte Leopoldo Marechal (Buenos Aires, Argentina).</p>
+            <p>Actualmente se desempeña como profesor de música en escuelas primarias de la provincia de Buenos Aires.</p>
+            <p>Su estilo se nutre de influencias como el rock, pop, reggae, música popular y electrónica, logrando plasmar su obra con carácter y claridad.</p>
+            <p>Su amplio repertorio propio expresa ideales como el cuidado del medio ambiente, la conciencia por la salud y la educación, y una cosmovisión estoica, llevando siempre como estandarte la amistad, el amor, la vida tranquila y el respeto por la naturaleza.</p>
+          </div>
+          <div class="mt-10 rounded-3xl border border-brass/25 bg-white/65 p-6 shadow-xl shadow-black/5">
+            <p class="flex items-start gap-4 text-lg font-semibold leading-8 text-night">
+              <i class="fa-solid fa-heart mt-2 text-wine"></i>
+              <span>Padre de Fabricio y Milena (ambos en la universidad). Completan su manada sus tres perritas, Lizy, Daka, Chuwi, y su gato Fermín.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="albumes" class="bg-[#fffaf2] py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="mb-3 text-sm font-extrabold uppercase tracking-[0.24em] text-wine">Álbumes destacados</p>
+          <h2 class="font-display text-5xl font-bold text-night sm:text-6xl">Proyectos Especiales</h2>
+          <p class="mt-6 text-lg leading-8 text-ink/70">Dos obras de Música Biográfica que rinden homenaje a grandes momentos e iconos de nuestra historia. Haz clic en cada portada para explorar su web interactiva.</p>
+        </div>
+
+        <div class="mt-14 grid gap-8 lg:grid-cols-2">
+          <a href="./gloria-eterna/" class="group block overflow-hidden rounded-[2rem] bg-night p-5 shadow-album transition duration-300 hover:-translate-y-2 hover:shadow-glow">
+            <div class="grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
+              <div class="album-cover relative aspect-square overflow-hidden rounded-[1.5rem] bg-night shadow-2xl">
+                <img src="images/portada-gloria-eterna.webp" alt="Portada del álbum Gloria Eterna" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              </div>
+              <div class="flex flex-col justify-between p-3 text-paper">
+                <div>
+                  <p class="text-sm font-bold uppercase tracking-[0.22em] text-brass">Música biográfica</p>
+                  <h3 class="mt-4 font-display text-5xl font-bold">Gloria Eterna</h3>
+                  <p class="mt-5 text-base leading-7 text-paper/75">Disco homenaje a la selección argentina campeona del mundo en Qatar 2022.</p>
+                </div>
+                <span class="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-brass px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-night transition group-hover:bg-paper">
+                  Explorar Álbum
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <a href="./glorias-del-deporte/" class="group block overflow-hidden rounded-[2rem] bg-[#221b1c] p-5 shadow-album transition duration-300 hover:-translate-y-2 hover:shadow-glow">
+            <div class="grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
+              <div class="album-cover album-slideshow relative aspect-square overflow-hidden rounded-[1.5rem] bg-night shadow-2xl">
+                <img src="glorias-del-deporte/images/francisco-prado.png" alt="Portada de Francisco Prado, Glorias del Deporte" class="album-slide is-active h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/esteban-ribovics.jpeg" alt="Portada de Esteban Ribovics, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/gaby-sabatini.png" alt="Portada de Gaby Sabatini, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/ilia-topuria.png" alt="Portada de Ilia Topuria, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/noche-ufc.png" alt="Portada de Noche UFC, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/santiago-ponzinibbio.png" alt="Portada de Santiago Ponzinibbio, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/ailin-perez.png" alt="Portada de Ailín Pérez, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <img src="glorias-del-deporte/images/el-pato-fillol.png" alt="Portada de Pato Fillol, Glorias del Deporte" class="album-slide h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+              </div>
+              <div class="flex flex-col justify-between p-3 text-paper">
+                <div>
+                  <p class="text-sm font-bold uppercase tracking-[0.22em] text-brass">Homenaje musical</p>
+                  <h3 class="mt-4 font-display text-5xl font-bold">Glorias del Deporte</h3>
+                  <p class="mt-5 text-base leading-7 text-paper/75">Homenaje musical a deportistas de élite.</p>
+                </div>
+                <span class="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-brass px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-night transition group-hover:bg-paper">
+                  Explorar Álbum
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="discografia" class="bg-paper py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="mb-3 text-sm font-extrabold uppercase tracking-[0.24em] text-wine">Discografía</p>
+          <h2 class="font-display text-5xl font-bold text-night sm:text-6xl">Más de su Obra</h2>
+          <p class="mt-5 text-lg leading-8 text-ink/70">Un repertorio amplio que cruza educación, memoria, juego, cine, reggae y canción popular.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-bolt mb-5 text-3xl text-wine"></i>
+            <h3 class="text-xl font-extrabold">Canciones rock pop</h3>
+            <p class="mt-3 text-ink/65">Volumen 1 y 2.</p>
+          </article>
+          <article class="rounded-2xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-school mb-5 text-3xl text-sage"></i>
+            <h3 class="text-xl font-extrabold">Efemérides: nuevas canciones para las escuelas</h3>
+            <p class="mt-3 text-ink/65">Música biográfica.</p>
+          </article>
+          <article class="rounded-2xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-child-reaching mb-5 text-3xl text-brass"></i>
+            <h3 class="text-xl font-extrabold">Cachorrito rock</h3>
+            <p class="mt-3 text-ink/65">Disco para los más pequeños.</p>
+          </article>
+          <article class="rounded-2xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-film mb-5 text-3xl text-wine"></i>
+            <h3 class="text-xl font-extrabold">Star War</h3>
+            <p class="mt-3 text-ink/65">Música biográfica: las películas hechas canciones.</p>
+          </article>
+          <article class="rounded-2xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-drum mb-5 text-3xl text-sage"></i>
+            <h3 class="text-xl font-extrabold">Música reggae</h3>
+            <p class="mt-3 text-ink/65">Volumen 1 y 2, bajo la banda Club del Ghetto.</p>
+          </article>
+          <article class="rounded-2xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-star mb-5 text-3xl text-brass"></i>
+            <h3 class="text-xl font-extrabold">Simples lanzados</h3>
+            <p class="mt-3 text-ink/65">“Hasta la vista baby esto es Esparta”, “La Bilardeada”, entre otros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="shows" class="bg-night py-24 text-paper">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+          <div>
+            <p class="mb-3 text-sm font-extrabold uppercase tracking-[0.24em] text-brass">Show & Proyectos</p>
+            <h2 class="font-display text-5xl font-bold leading-tight text-white sm:text-6xl">Bandas, escenarios y otras facetas creativas.</h2>
+          </div>
+          <div class="grid gap-5">
+            <article class="rounded-3xl border border-white/10 bg-white/[.07] p-7 shadow-2xl shadow-black/15 transition hover:border-brass/50">
+              <i class="fa-solid fa-users mb-5 text-3xl text-brass"></i>
+              <h3 class="text-2xl font-extrabold">Bandas y proyectos propios</h3>
+              <p class="mt-4 leading-7 text-paper/75">Club del Ghetto, Frecuencia 29 y La tercera es la vencida, con recorrido previo por bandas locales como guitarrista.</p>
+            </article>
+            <article class="rounded-3xl border border-white/10 bg-white/[.07] p-7 shadow-2xl shadow-black/15 transition hover:border-brass/50">
+              <i class="fa-solid fa-masks-theater mb-5 text-3xl text-brass"></i>
+              <h3 class="text-2xl font-extrabold">Entretenimiento</h3>
+              <p class="mt-4 leading-7 text-paper/75">Stand up y Showman, repertorios que combinan humor y música para toda la familia.</p>
+            </article>
+            <article class="rounded-3xl border border-white/10 bg-white/[.07] p-7 shadow-2xl shadow-black/15 transition hover:border-brass/50">
+              <i class="fa-solid fa-pen-nib mb-5 text-3xl text-brass"></i>
+              <h3 class="text-2xl font-extrabold">Otras áreas artísticas</h3>
+              <p class="mt-4 leading-7 text-paper/75">Creador de cuentos infantiles (aún sin publicar) e incursionando como guionista de futuros cortometrajes.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="bg-[#fffaf2] py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
+          <div>
+            <p class="mb-3 text-sm font-extrabold uppercase tracking-[0.24em] text-wine">Contacto</p>
+            <h2 class="font-display text-5xl font-bold leading-tight text-night sm:text-6xl">Conectá con Juan Enriquez</h2>
+            <p class="mt-5 text-lg leading-8 text-ink/70">Para shows, proyectos educativos, colaboraciones musicales o consultas generales.</p>
+          </div>
+
+          <div class="grid gap-5">
+            <a href="https://instagram.com/profe.vintage" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-5 rounded-3xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-wine text-2xl text-white"><i class="fa-brands fa-instagram"></i></span>
+              <span>
+                <span class="block text-sm font-bold uppercase tracking-[0.18em] text-ink/50">Instagram</span>
+                <span class="mt-1 block text-xl font-extrabold text-night group-hover:text-wine">@profe.vintage</span>
+              </span>
+            </a>
+            <a href="https://wa.me/541161667220" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-5 rounded-3xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-sage text-2xl text-white"><i class="fa-brands fa-whatsapp"></i></span>
+              <span>
+                <span class="block text-sm font-bold uppercase tracking-[0.18em] text-ink/50">WhatsApp / Teléfono</span>
+                <span class="mt-1 block text-xl font-extrabold text-night group-hover:text-sage">+54 11 6166-7220</span>
+              </span>
+            </a>
+            <a href="mailto:cachorritorock@gmail.com" class="group flex items-center gap-5 rounded-3xl border border-black/5 bg-white p-6 shadow-xl shadow-black/5 transition hover:-translate-y-1 hover:shadow-2xl">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-brass text-2xl text-night"><i class="fa-solid fa-envelope"></i></span>
+              <span>
+                <span class="block text-sm font-bold uppercase tracking-[0.18em] text-ink/50">Correo electrónico</span>
+                <span class="mt-1 block break-all text-xl font-extrabold text-night group-hover:text-brass">cachorritorock@gmail.com</span>
+              </span>
+            </a>
+
+            <form class="rounded-3xl border border-black/5 bg-night p-6 text-paper shadow-album">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <input type="text" name="nombre" placeholder="Nombre" class="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-paper outline-none transition placeholder:text-paper/45 focus:border-brass" />
+                <input type="email" name="email" placeholder="Email" class="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-paper outline-none transition placeholder:text-paper/45 focus:border-brass" />
+              </div>
+              <textarea name="mensaje" rows="4" placeholder="Mensaje" class="mt-4 w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-paper outline-none transition placeholder:text-paper/45 focus:border-brass"></textarea>
+              <a href="mailto:cachorritorock@gmail.com" class="mt-4 inline-flex items-center justify-center gap-3 rounded-full bg-brass px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-night transition hover:bg-paper">
+                <i class="fa-solid fa-paper-plane"></i>
+                Enviar consulta
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-night px-6 py-8 text-center text-sm text-paper/60">
+    <p>© 2026 Juan Enriquez. Todos los derechos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
