@@ -1,7 +1,7 @@
 const tracks = [
   {
     match: "Argentina vs. Arabia Saudita",
-    title: "Tropezon no es caida",
+    title: "Tropezón no es caida",
     genre: "Cuarteto estilo cordobes",
     audio: "https://www.dropbox.com/scl/fi/45m8fwidhyhyihq9euub8/1.-Arabia.-Tropezon-no-es-caida-1.wav?rlkey=mcft1hgt12jrbyem78gw29y87&st=gqvfgw3d&raw=1",
     cover: "images/portada-limpia.webp",
