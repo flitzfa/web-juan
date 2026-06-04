@@ -25,7 +25,7 @@ const tracks = [
   },
   {
     match: "Argentina vs. Australia",
-    title: "Canguro vs. Yacare",
+    title: "Canguro vs. Yacaré",
     genre: "Cumbia bonaerense",
     audio: "https://www.dropbox.com/scl/fi/wij4crbglxbkebd15mp1q/4.-Australia.-Canguro-vs-Yacare-1.wav?rlkey=tvofgr71kizz7p9ci01xlf6n2&st=2clnqgbo&raw=1",
     cover: "images/portada-limpia.webp",
@@ -56,7 +56,7 @@ const tracks = [
     colors: ["rgba(23, 185, 255, 0.5)", "rgba(217, 177, 92, 0.46)"],
   },
   {
-    match: "La premiacion",
+    match: "La premiación",
     title: "La premiación",
     genre: "Rock",
     audio: "https://www.dropbox.com/scl/fi/ntgylzmpzoxnwopxudhjs/8.-Premiacion-1.wav?rlkey=6vti2clh65sd7ury7chk151nd&st=56306r4e&raw=1",
