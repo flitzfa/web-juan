@@ -38,3 +38,22 @@ body {
 .album-slide.is-active {
   opacity: 1;
 }
+
+#audio-progress::-webkit-slider-thumb {
+  appearance: none;
+  background: #c89b55;
+  border: 3px solid #f6f0e7;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(200, 155, 85, .35);
+  height: 20px;
+  width: 20px;
+}
+
+#audio-progress::-moz-range-thumb {
+  background: #c89b55;
+  border: 3px solid #f6f0e7;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(200, 155, 85, .35);
+  height: 18px;
+  width: 18px;
+}
