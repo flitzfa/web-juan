@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Pato Fillol, música biográfica de Juan Enriquez." />
+  <title>El Pato Fillol | Glorias del Deporte</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    body { font-family: Inter, sans-serif; }
+    .font-cinzel { font-family: Cinzel, serif; }
+    .cover-frame {
+      aspect-ratio: 1 / 1;
+      width: auto;
+      height: auto;
+      max-height: calc(100vh - 290px);
+      max-width: min(320px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .track-progress::-webkit-progress-bar { background: rgba(255,255,255,.12); border-radius: 999px; }
+    .track-progress::-webkit-progress-value { background: linear-gradient(90deg,#b88a44,#f4d58d); border-radius: 999px; }
+    .track-progress::-moz-progress-bar { background: linear-gradient(90deg,#b88a44,#f4d58d); border-radius: 999px; }
+  </style>
+</head>
+<body class="h-screen max-h-screen overflow-hidden bg-[#111214] text-stone-100">
+  <main class="grid h-screen max-h-screen overflow-hidden place-items-center bg-[radial-gradient(circle_at_20%_12%,rgba(125,39,51,.42),transparent_34%),radial-gradient(circle_at_80%_82%,rgba(200,155,85,.28),transparent_32%),linear-gradient(135deg,#111214,#20211f_48%,#0d0d0f)] px-3 py-3">
+    <section class="flex h-full max-h-full w-full max-w-md flex-col justify-center gap-2 text-center">
+      <article class="relative rounded-[1.5rem] border border-white/10 bg-white/[.08] p-3 shadow-[0_28px_80px_rgba(0,0,0,.35)] backdrop-blur-xl">
+        <div id="copy-toast" class="pointer-events-none absolute left-1/2 top-3 z-10 -translate-x-1/2 -translate-y-2 rounded-full border border-[#f4d58d]/30 bg-[#111214]/90 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#f4d58d] opacity-0 shadow-2xl backdrop-blur transition duration-300">¡Enlace copiado!</div>
+        <div class="cover-frame overflow-hidden rounded-[1.15rem] bg-black/25 shadow-2xl"><img src="images/el-pato-fillol.png" alt="Portada de El Pato Fillol" class="h-full w-full object-contain transition duration-500 hover:scale-[1.02]" /></div>
+        <div class="px-1 pb-1 pt-2">
+          <h1 class="font-cinzel text-2xl font-bold leading-tight text-white sm:text-3xl">El Pato Fillol</h1>
+          <p class="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-stone-300 sm:text-xs">Música Biográfica · Juan Enriquez</p>
+          <div class="mt-3 flex items-center gap-3">
+            <button class="play-toggle grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#c89b55] text-[#111214] shadow-[0_14px_40px_rgba(200,155,85,.32)] transition hover:bg-[#f4d58d]" type="button" aria-label="Reproducir El Pato Fillol"><i class="play-icon fa-solid fa-play pl-1"></i></button>
+            <div class="w-full text-left">
+              <progress class="track-progress h-2 w-full cursor-pointer overflow-hidden rounded-full" max="100" value="0" aria-label="Progreso de El Pato Fillol"></progress>
+              <div class="mt-1.5 flex justify-between text-[0.7rem] font-semibold tabular-nums text-stone-400"><span class="current-time">0:00</span><span class="duration">0:00</span></div>
+            </div>
+          </div>
+          <audio preload="metadata" src="https://www.dropbox.com/scl/fi/xn2q0br7s516g0wwu2bwk/TRACK_02_PatoFillol.mp3?rlkey=vy9ekov85otp1rgow7wllndu0&st=bw06it80&raw=1"></audio>
+          <div class="mt-3 flex justify-center gap-2.5" aria-label="Contacto de Juan Enriquez">
+            <a href="https://instagram.com/profe.vintage" target="_blank" rel="noopener noreferrer" class="grid h-10 w-10 place-items-center rounded-full border border-[#c89b55]/35 text-stone-300 transition hover:border-[#f4d58d] hover:bg-[#c89b55]/15 hover:text-[#f4d58d]" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/541161667220" target="_blank" rel="noopener noreferrer" class="grid h-10 w-10 place-items-center rounded-full border border-[#c89b55]/35 text-stone-300 transition hover:border-[#f4d58d] hover:bg-[#c89b55]/15 hover:text-[#f4d58d]" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:cachorritorock@gmail.com" class="grid h-10 w-10 place-items-center rounded-full border border-[#c89b55]/35 text-stone-300 transition hover:border-[#f4d58d] hover:bg-[#c89b55]/15 hover:text-[#f4d58d]" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+            <button class="share-link grid h-10 w-10 place-items-center rounded-full border border-[#c89b55]/35 text-stone-300 transition hover:border-[#f4d58d] hover:bg-[#c89b55]/15 hover:text-[#f4d58d]" type="button" aria-label="Compartir enlace"><i class="fa-solid fa-link"></i></button>
+          </div>
+        </div>
+      </article>
+      <a href="./index.html" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-stone-200 transition hover:border-[#c89b55] hover:text-[#f4d58d] sm:text-xs"><i class="fa-solid fa-arrow-left"></i> Volver a Glorias del Deporte</a>
+    </section>
+  </main>
+  <script>
+    const audio = document.querySelector("audio");
+    const button = document.querySelector(".play-toggle");
+    const icon = document.querySelector(".play-icon");
+    const progress = document.querySelector(".track-progress");
+    const current = document.querySelector(".current-time");
+    const duration = document.querySelector(".duration");
+    const shareButton = document.querySelector(".share-link");
+    const copyToast = document.querySelector("#copy-toast");
+    let toastTimer;
+
+    const formatTime = (seconds) => Number.isFinite(seconds) ? Math.floor(seconds / 60) + ":" + Math.floor(seconds % 60).toString().padStart(2, "0") : "0:00";
+    const setIcon = (playing) => {
+      icon.classList.toggle("fa-play", !playing);
+      icon.classList.toggle("fa-pause", playing);
+      icon.classList.toggle("pl-1", !playing);
+    };
+    const update = () => {
+      progress.value = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+      current.textContent = formatTime(audio.currentTime);
+      duration.textContent = formatTime(audio.duration);
+    };
+    const showToast = () => {
+      clearTimeout(toastTimer);
+      copyToast.classList.remove("opacity-0", "-translate-y-2");
+      copyToast.classList.add("opacity-100", "translate-y-0");
+      toastTimer = setTimeout(() => {
+        copyToast.classList.add("opacity-0", "-translate-y-2");
+        copyToast.classList.remove("opacity-100", "translate-y-0");
+      }, 2000);
+    };
+
+    button.addEventListener("click", () => audio.paused ? audio.play() : audio.pause());
+    audio.addEventListener("play", () => setIcon(true));
+    audio.addEventListener("pause", () => setIcon(false));
+    audio.addEventListener("loadedmetadata", update);
+    audio.addEventListener("timeupdate", update);
+    audio.addEventListener("ended", () => { setIcon(false); progress.value = 0; current.textContent = "0:00"; });
+    progress.addEventListener("click", (event) => {
+      if (!audio.duration) return;
+      const rect = progress.getBoundingClientRect();
+      audio.currentTime = ((event.clientX - rect.left) / rect.width) * audio.duration;
+    });
+    shareButton.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(window.location.href);
+      showToast();
+    });
+  </script>
+</body>
+</html>

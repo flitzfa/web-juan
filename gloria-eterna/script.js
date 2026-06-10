@@ -259,3 +259,11 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
+// === NAVBAR MÓVIL: cierra el menú hamburguesa al hacer clic en un enlace ===
+const menuToggle = document.getElementById("menu-toggle");
+document.querySelectorAll("[data-menu-link]").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (menuToggle) menuToggle.checked = false;
+  });
+});
+

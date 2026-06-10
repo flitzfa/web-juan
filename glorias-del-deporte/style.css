@@ -294,6 +294,56 @@ h2 {
   box-shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
 }
 
+/* Enlace clickeable sobre la portada: envía a la web individual del tema */
+.track-art-link {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.track-art-link::after {
+  content: "\2197"; /* ↗ flecha hacia arriba a la derecha */
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--gold-light);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 220ms ease, transform 220ms ease, background 220ms ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.track-art-link:hover .track-art img,
+.track-art-link:focus-visible .track-art img {
+  transform: scale(1.06);
+  filter: brightness(1.08);
+}
+
+.track-art-link:hover::after,
+.track-art-link:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, 0);
+  background: rgba(200, 155, 85, 0.85);
+  color: #1a1208;
+}
+
+.track-art-link:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 .track-art {
   aspect-ratio: 1;
   overflow: hidden;
@@ -493,43 +543,116 @@ h2 {
   }
 }
 
+/* === NAVBAR MÓVIL HOMOGÉNEA (hamburguesa) === */
+/* Ocultamos el input checkbox de forma forzada porque este proyecto no carga Tailwind */
+#menu-toggle {
+  display: none !important;
+}
+
+.menu-toggle {
+  display: none;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border: 1px solid rgba(255, 227, 160, 0.55);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 227, 160, 0.08), rgba(217, 170, 83, 0.04));
+  color: var(--gold-light);
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.menu-toggle:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.menu-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  fill: none;
+  display: block;
+}
+
+.bar {
+  transform-origin: center;
+  transition: transform 240ms ease, opacity 180ms ease;
+}
+
+#menu-toggle:checked + .menu-toggle .bar-top {
+  transform: translateY(5px) rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-toggle .bar-mid {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .menu-toggle .bar-bot {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.footer-link {
+  color: inherit;
+  font-weight: 800;
+  border-bottom: 1px solid currentColor;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+.footer-credit {
+  margin: 0.55rem 0 0;
+  color: rgba(248, 244, 234, 0.55);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
 @media (max-width: 680px) {
-  .site-header {
+  .menu-toggle {
+    display: grid;
+  }
+
+  /* Usamos un selector de alta especificidad para ocultar el menú móvil por defecto */
+  .site-header nav.site-nav {
+    display: none; /* Arranca cerrado */
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: calc(100% + 0.6rem);
     flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.25rem 1rem 1rem 1rem;
-    background: linear-gradient(180deg, rgba(8, 9, 12, 0.95) 0%, rgba(8, 9, 12, 0.5) 75%, rgba(8, 9, 12, 0) 100%);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none;
+    gap: 0.25rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 227, 160, 0.32);
+    border-radius: 14px;
+    background: rgba(8, 9, 12, 0.96) !important; /* Fondo opaco sólido para que no se traslape con las letras del fondo */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    z-index: 9;
   }
 
-  .brand {
-    display: none;
+  /* Solo cuando el checkbox está tildado, se fuerza su visualización */
+  #menu-toggle:checked ~ nav.site-nav {
+    display: flex !important;
   }
 
-  .site-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem 0.85rem;
-    width: 100%;
+  .site-nav a {
+    padding: 0.65rem 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.95);
   }
 
-  .site-header nav a {
-    white-space: nowrap;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.98);
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85);
-    transition: color 180ms ease;
-  }
-
-  .site-header nav a:hover,
-  .site-header nav a:focus-visible {
-    color: var(--gold-light);
+  .site-nav a:last-child {
+    border-bottom: 0;
   }
 
   .hero {

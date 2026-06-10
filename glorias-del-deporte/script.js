@@ -7,7 +7,7 @@ const tracks = [
   {
     title: "El Pato Fillol",
     image: "images/el-pato-fillol.png",
-    audio: "https://www.dropbox.com/scl/fi/xn2q0br7s516g0wwu2bwk/TRACK_02_PatoFillol.mp3?rlkey=vy9ekov85otp1rgow7wllndu0&st=bw06it80&raw=1",
+    audio: "https://www.dropbox.com/scl/fi/vmig6rxi1q780fsfxoiuw/TRACK_02_PatoFillol.mp3?rlkey=omqnxob5hw23wxmo7dw4pl7cr&st=3wiqyros&raw=1",
   },
   {
     title: "Esteban Ribovics",
@@ -37,7 +37,7 @@ const tracks = [
   {
     title: "Santiago Ponzinibbio",
     image: "images/santiago-ponzinibbio.png",
-    audio: "https://www.dropbox.com/scl/fi/18wcl03bzixqiddfn6bdl/TRACK_08_SantiagoPonzinibbio.mp3?rlkey=ppixw9fzzgirg9kxer4e123eg&st=qyjxsoj3&raw=1",
+    audio: "https://www.dropbox.com/scl/fi/iri9v0msr2m65h5r17p4d/TRACK_08_SantiagoPonzinibbio.mp3?rlkey=o8loi9h7b5mgpjww8af9qhz8v&st=hm8fazdg&raw=1",
   },
 ];
 
@@ -50,6 +50,18 @@ setInterval(() => {
   activeSlide = (activeSlide + 1) % slides.length;
   slides[activeSlide].classList.add("is-active");
 }, 4500);
+
+// Mapeo título del tema → URL de su web individual
+const trackPages = {
+  "Ailín Pérez": "ailin-perez.html",
+  "El Pato Fillol": "el-pato-fillol.html",
+  "Esteban Ribovics": "esteban-ribovics.html",
+  "Francisco Prado": "francisco-prado.html",
+  "Gaby Sabatini": "gaby-sabatini.html",
+  "Ilia Topuria": "ilia-topuria.html",
+  "Noche UFC": "noche-ufc.html",
+  "Santiago Ponzinibbio": "santiago-ponzinibbio.html",
+};
 
 const tracksGrid = document.querySelector("#tracksGrid");
 
@@ -80,9 +92,11 @@ function createTrackCard(track, index) {
   card.className = "track-card reveal";
 
   card.innerHTML = `
-    <div class="track-art">
-      <img src="${track.image}" alt="Portada de ${track.title}" loading="lazy">
-    </div>
+    <a class="track-art-link" href="${trackPages[track.title] || '#'}" aria-label="Abrir la página de ${track.title}">
+      <div class="track-art">
+        <img src="${track.image}" alt="Portada de ${track.title}" loading="lazy">
+      </div>
+    </a>
     <div class="track-body">
       <span class="track-number">${String(index + 1).padStart(2, "0")}</span>
       <h3>${track.title}</h3>
@@ -167,4 +181,12 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
+});
+
+// === NAVBAR MÓVIL: cierra el menú hamburguesa al hacer clic en un enlace ===
+const menuToggle = document.getElementById("menu-toggle");
+document.querySelectorAll("[data-menu-link]").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (menuToggle) menuToggle.checked = false;
+  });
 });

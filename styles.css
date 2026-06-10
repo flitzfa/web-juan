@@ -57,3 +57,16 @@ body {
   height: 18px;
   width: 18px;
 }
+
+.footer-link {
+  color: inherit;
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #c89b55;
+  border-bottom-color: #c89b55;
+}

@@ -15,12 +15,23 @@
     <a class="brand" href="#inicio" aria-label="Ir al inicio">
       <span>Inicio</span>
     </a>
-    <nav>
-      <a href="#album">Álbum</a>
-      <a href="#concepto">Concepto</a>
-      <a href="#canciones">Canciones</a>
-      <a href="#creditos">Créditos</a>
-      <a href="#contacto">Contacto</a>
+
+    <input id="menu-toggle" type="checkbox" class="peer hidden" aria-label="Abrir menú" />
+    <label for="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="menu-icon">
+        <line x1="3" y1="7"  x2="21" y2="7"  class="bar bar-top" />
+        <line x1="3" y1="12" x2="21" y2="12" class="bar bar-mid" />
+        <line x1="3" y1="17" x2="21" y2="17" class="bar bar-bot" />
+      </svg>
+    </label>
+
+    <nav id="main-menu" class="site-nav">
+      <a data-menu-link href="../index.html">Web Principal</a>
+      <a data-menu-link href="#album">Álbum</a>
+      <a data-menu-link href="#concepto">Concepto</a>
+      <a data-menu-link href="#canciones">Canciones</a>
+      <a data-menu-link href="#creditos">Créditos</a>
+      <a data-menu-link href="#contacto">Contacto</a>
     </nav>
   </header>
 
@@ -138,6 +149,7 @@
 
   <footer class="site-footer">
     <p>Glorias del deporte · Música biográfica</p>
+    <p class="footer-credit">Autor y compositor: <a href="../index.html" class="footer-link">Juan Enriquez</a></p>
   </footer>
 
   <script src="script.js"></script>
