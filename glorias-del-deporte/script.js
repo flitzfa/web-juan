@@ -1,42 +1,42 @@
 const tracks = [
   {
     title: "Ailín Pérez",
-    image: "images/ailin-perez.png",
+    image: "images/ailin-perez.webp",
     audio: "https://www.dropbox.com/scl/fi/ypt6o58hsrr4myketmi6g/TRACK_01_AilinPerez.mp3?rlkey=oq39yqpbzngrso8jttn0ecuyk&st=7g43k5u3&raw=1",
   },
   {
     title: "El Pato Fillol",
-    image: "images/el-pato-fillol.png",
+    image: "images/el-pato-fillol.webp",
     audio: "https://www.dropbox.com/scl/fi/xn2q0br7s516g0wwu2bwk/TRACK_02_PatoFillol.mp3?rlkey=vy9ekov85otp1rgow7wllndu0&st=bw06it80&raw=1",
   },
   {
     title: "Esteban Ribovics",
-    image: "images/esteban-ribovics.jpeg",
+    image: "images/esteban-ribovics.webp",
     audio: "https://www.dropbox.com/scl/fi/7x3s5arrjt3wzqonc5fad/TRACK_03_EstebanRibovics.mp3?rlkey=7jpcxn6kbiwtav0rue1ygffp3&st=waj4rkgw&raw=1",
   },
   {
     title: "Francisco Prado",
-    image: "images/francisco-prado.png",
+    image: "images/francisco-prado.webp",
     audio: "https://www.dropbox.com/scl/fi/l7otsh6dmq1kpecblfd3r/TRACK_04_FranciscoPrado.mp3?rlkey=x20z5hrkwt051pl8srwjtfjjl&st=f9ikkg2t&raw=1",
   },
   {
     title: "Gaby Sabatini",
-    image: "images/gaby-sabatini.png",
+    image: "images/gaby-sabatini.webp",
     audio: "https://www.dropbox.com/scl/fi/m04nktuvsrplsx1cmjkrr/TRACK_05_GabySabatini.mp3?rlkey=s6fa5hh27i5rx6bm3wb9i43jb&st=o07b93n6&raw=1",
   },
   {
     title: "Ilia Topuria",
-    image: "images/ilia-topuria.png",
+    image: "images/ilia-topuria.webp",
     audio: "https://www.dropbox.com/scl/fi/nl0ywlpz2edowl001bvo0/TRACK_06_IliaTopuria.mp3?rlkey=bnfd3wp2nbci8xy7nndd57hsn&st=0c9bm0g3&raw=1",
   },
   {
     title: "Noche UFC",
-    image: "images/noche-ufc.png",
+    image: "images/noche-ufc.webp",
     audio: "https://www.dropbox.com/scl/fi/qi9q2d402goegs3m3rhd5/TRACK_07_NocheUFC.mp3?rlkey=rc15rx079fzqs1dmyyeip6n7n&st=fclebe0t&raw=1",
   },
   {
     title: "Santiago Ponzinibbio",
-    image: "images/santiago-ponzinibbio.png",
+    image: "images/santiago-ponzinibbio.webp",
     audio: "https://www.dropbox.com/scl/fi/18wcl03bzixqiddfn6bdl/TRACK_08_SantiagoPonzinibbio.mp3?rlkey=ppixw9fzzgirg9kxer4e123eg&amp;st=qyjxsoj3&amp;raw=1",
   },
 ];
@@ -109,7 +109,7 @@ function createTrackCard(track, index) {
             <span class="duration">0:00</span>
           </div>
         </div>
-        <audio preload="auto" src="${track.audio}"></audio>
+        <audio preload="metadata" src="${track.audio}"></audio>
       </div>
     </div>
   `;
@@ -123,7 +123,11 @@ function createTrackCard(track, index) {
   playButton.addEventListener("click", async () => {
     if (audio.paused) {
       pauseOtherTracks(audio);
-      await audio.play();
+      try {
+        await audio.play();
+      } catch {
+        return;
+      }
       playButton.textContent = "❚❚";
       playButton.setAttribute("aria-label", `Pausar ${track.title}`);
     } else {

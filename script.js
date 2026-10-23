@@ -31,6 +31,17 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Sin backend: arma un mailto con lo que escribió la persona.
+document.querySelector("[data-contact-form]")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  const subject = `Consulta de ${data.get("nombre")}`;
+  const body = `${data.get("mensaje")}
+
+${data.get("nombre")} · ${data.get("email")}`;
+  window.location.href = `mailto:cachorritorock@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
 const albumSlides = document.querySelectorAll(".album-slideshow .album-slide");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

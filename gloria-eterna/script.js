@@ -116,7 +116,7 @@ function createTrackCard(track, index) {
           </div>
           <input class="player-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso de ${track.title}" />
         </div>
-        <audio class="track-audio" preload="auto" src="${track.audio}"></audio>
+        <audio class="track-audio" preload="metadata" src="${track.audio}"></audio>
       </div>
     </div>
   `;
@@ -154,7 +154,6 @@ function setPlaybackState(button, isPlaying) {
   if (audio) updatePlayer(audio);
 }
 
-// The real audio URL is attached only after the user asks to play a track.
 document.addEventListener("click", (event) => {
   const button = event.target.closest(".play-toggle");
   if (!button) return;
@@ -171,8 +170,8 @@ document.addEventListener("click", (event) => {
   });
 
   if (audio.paused) {
-    audio.play();
     setPlaybackState(button, true);
+    audio.play().catch(() => setPlaybackState(button, false));
   } else {
     audio.pause();
     setPlaybackState(button, false);
