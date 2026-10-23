@@ -36,9 +36,7 @@ document.querySelector("[data-contact-form]")?.addEventListener("submit", (event
   event.preventDefault();
   const data = new FormData(event.target);
   const subject = `Consulta de ${data.get("nombre")}`;
-  const body = `${data.get("mensaje")}
-
-${data.get("nombre")} · ${data.get("email")}`;
+  const body = `${data.get("mensaje")}\n\n${data.get("nombre")} · ${data.get("email")}`;
   window.location.href = `mailto:cachorritorock@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
