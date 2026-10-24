@@ -1,0 +1,15 @@
+/* Estilos compartidos por las páginas de cada deportista. */
+body { font-family: Inter, sans-serif; }
+.font-cinzel { font-family: Cinzel, serif; }
+.cover-frame {
+  aspect-ratio: 1 / 1;
+  width: auto;
+  height: auto;
+  max-height: calc(100vh - 290px);
+  max-width: min(320px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+.track-progress::-webkit-progress-bar { background: rgba(255,255,255,.12); border-radius: 999px; }
+.track-progress::-webkit-progress-value { background: linear-gradient(90deg,#b88a44,#f4d58d); border-radius: 999px; }
+.track-progress::-moz-progress-bar { background: linear-gradient(90deg,#b88a44,#f4d58d); border-radius: 999px; }

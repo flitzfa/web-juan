@@ -1,31 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Gaby Sabatini, música biográfica de Juan Enriquez." />
   <title>Gaby Sabatini | Glorias del Deporte</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="canonical" href="https://juanenriquez.com.ar/glorias-del-deporte/gaby-sabatini.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:title" content="Gaby Sabatini | Glorias del Deporte" />
+  <meta property="og:description" content="Gaby Sabatini, música biográfica de Juan Enriquez." />
+  <meta property="og:url" content="https://juanenriquez.com.ar/glorias-del-deporte/gaby-sabatini.html" />
+  <meta property="og:image" content="https://juanenriquez.com.ar/og/gaby-sabatini.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="tailwind.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <style>
-    body { font-family: Inter, sans-serif; }
-    .font-cinzel { font-family: Cinzel, serif; }
-    .cover-frame {
-      aspect-ratio: 1 / 1;
-      width: auto;
-      height: auto;
-      max-height: calc(100vh - 290px);
-      max-width: min(320px, 100%);
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .track-progress::-webkit-progress-bar { background: rgba(255,255,255,.12); border-radius: 999px; }
-    .track-progress::-webkit-progress-value { background: linear-gradient(90deg,#b88a44,#f4d58d); border-radius: 999px; }
-    .track-progress::-moz-progress-bar { background: linear-gradient(90deg,#b88a44,#f4d58d); border-radius: 999px; }
-  </style>
+  <link rel="stylesheet" href="track.css" />
 </head>
 <body class="h-screen max-h-screen overflow-hidden bg-[#111214] text-stone-100">
   <main class="grid h-screen max-h-screen overflow-hidden place-items-center bg-[radial-gradient(circle_at_20%_12%,rgba(125,39,51,.42),transparent_34%),radial-gradient(circle_at_80%_82%,rgba(200,155,85,.28),transparent_32%),linear-gradient(135deg,#111214,#20211f_48%,#0d0d0f)] px-3 py-3">
@@ -55,54 +50,6 @@
       <a href="./index.html" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-stone-200 transition hover:border-[#c89b55] hover:text-[#f4d58d] sm:text-xs"><i class="fa-solid fa-arrow-left"></i> Volver a Glorias del Deporte</a>
     </section>
   </main>
-  <script>
-    const audio = document.querySelector("audio");
-    const button = document.querySelector(".play-toggle");
-    const icon = document.querySelector(".play-icon");
-    const progress = document.querySelector(".track-progress");
-    const current = document.querySelector(".current-time");
-    const duration = document.querySelector(".duration");
-    const shareButton = document.querySelector(".share-link");
-    const copyToast = document.querySelector("#copy-toast");
-    let toastTimer;
-
-    const formatTime = (seconds) => Number.isFinite(seconds) ? Math.floor(seconds / 60) + ":" + Math.floor(seconds % 60).toString().padStart(2, "0") : "0:00";
-    const setIcon = (playing) => {
-      icon.classList.toggle("fa-play", !playing);
-      icon.classList.toggle("fa-pause", playing);
-      icon.classList.toggle("pl-1", !playing);
-    };
-    const update = () => {
-      progress.value = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
-      current.textContent = formatTime(audio.currentTime);
-      duration.textContent = formatTime(audio.duration);
-    };
-    const showToast = () => {
-      clearTimeout(toastTimer);
-      copyToast.classList.remove("opacity-0", "-translate-y-2");
-      copyToast.classList.add("opacity-100", "translate-y-0");
-      toastTimer = setTimeout(() => {
-        copyToast.classList.add("opacity-0", "-translate-y-2");
-        copyToast.classList.remove("opacity-100", "translate-y-0");
-      }, 2000);
-    };
-
-    button.addEventListener("click", () => audio.paused ? audio.play() : audio.pause());
-    audio.addEventListener("play", () => setIcon(true));
-    audio.addEventListener("pause", () => setIcon(false));
-    audio.addEventListener("loadedmetadata", update);
-    audio.addEventListener("timeupdate", update);
-    audio.addEventListener("ended", () => { setIcon(false); progress.value = 0; current.textContent = "0:00"; });
-    progress.addEventListener("click", (event) => {
-      if (!audio.duration) return;
-      const rect = progress.getBoundingClientRect();
-      audio.currentTime = ((event.clientX - rect.left) / rect.width) * audio.duration;
-    });
-    shareButton.addEventListener("click", async () => {
-      await navigator.clipboard.writeText(window.location.href);
-      showToast();
-    });
-  </script>
+  <script src="track.js"></script>
 </body>
 </html>
-
